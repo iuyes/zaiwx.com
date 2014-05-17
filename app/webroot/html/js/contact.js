@@ -19,6 +19,9 @@ $(function() {
             FMessage: {
                 required: true,
 				minlength: 10
+            },
+			FPhone: {
+                required: true
             }
         },
         messages: {
@@ -32,7 +35,10 @@ $(function() {
             FMessage: {
                 required: "请输入您的留言",
                 minlength: "不少于10个字符"
-            }
+            },
+            FPhone: {
+                required: "请输入您的电话"
+            },
         },
         submitHandler: function(form) {
             $(form).ajaxSubmit({
@@ -40,7 +46,13 @@ $(function() {
                 data: $(form).serialize(),
                 url: BASE_URL + 'welcome/message',
                 success: function(data) {
-                    $('#success').show();
+					var obj = JSON.parse(data);
+                    if(obj.state == 1) {
+                        $('#success').show();
+                    } else {
+						$('#error').html(obj.msg);
+						$('#error').show();
+					}
                 },
                 error: function() {
                     $('#error').show();
@@ -87,12 +99,14 @@ $(function() {
                 type: "POST",
                 data: $(form).serialize(),
                 url: BASE_URL + 'welcome/signup',
-                success: function() {
-                    $('#regsuccess').show();
-                    var obj = $.parseJSON(data);
-                    if(obj.state) {
-                        location.href = BASE_URL + 'admin';
-                    }
+                success: function(data) {
+                    var obj = JSON.parse(data);
+                    if(obj.state == 1) {
+                        location.href = obj.redirect;
+                    } else {
+						$('#regerror').html(obj.msg);
+						$('#regerror').show();
+					}
                 },
                 error: function() {
                     $('#regerror').show();

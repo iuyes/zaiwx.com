@@ -45,8 +45,15 @@ class WelcomeController extends AppController {
 				$query = $this->WxFeedback->save();
 				$msg['state'] = $query ? 1 : 0;
 			} else {
+				$error = "错误：";
+				foreach ($this->WxFeedback->validationErrors as $key => $vals) {
+					$error .= "{$key}, ";
+					foreach ($vals as $k => $v) {
+						$error .= "{$v}&nbsp;&nbsp;";
+					}
+				}
 				$msg['state'] = 0;
-				$msg['msg'] = $this->WxFeedback->validationErrors;
+				$msg['msg'] = $error;
 			}
 		}
 		exit(json_encode($msg));
@@ -83,8 +90,15 @@ class WelcomeController extends AppController {
 					$msg['redirect'] = Router::url('/admin');
 				}
 			} else {
+				$error = "错误：";
+				foreach ($this->TPerson->validationErrors as $key => $vals) {
+					$error .= "{$key}, ";
+					foreach ($vals as $k => $v) {
+						$error .= "{$v}&nbsp;&nbsp;";
+					}
+				}
 				$msg['state'] = 0;
-				$msg['msg'] = $this->WxFeedback->validationErrors;
+				$msg['msg'] = $error;
 			}
 		}
 		exit(json_encode($msg));
