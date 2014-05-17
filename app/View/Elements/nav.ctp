@@ -1,56 +1,29 @@
-<?php
-	$navTitle = isset($WC_data['WxWebchat']['FName']) ? "{$cakeSign}&nbsp;»<span style='margin-left:5px;font-size:16px'>".$WC_data['WxWebchat']['FName']."</span>" : $cakeSign;
-?>
-<div class="navbar navbar-default" id="navbar">
-	<script type="text/javascript">
-		try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-	</script>
-
-	<div class="navbar-container" id="navbar-container">
-		<div class="navbar-header pull-left">
-			<a href="<?= Router::url(array('controller' => "admin", 'action' => "index")) ?>" class="navbar-brand">
-				<small>
-					<i class="icon-leaf"></i>
-					<?= $navTitle ?>
-				</small>
-			</a><!-- /.brand -->
-		</div><!-- /.navbar-header -->
-
-		<div class="navbar-header pull-right" role="navigation">
-			<ul class="nav ace-nav">
-				<? if ($uid): ?>
-				<li class="light-blue">
-					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-						<? //$this->Html->image('/assets/avatars/user.jpg', array('class' => "nav-user-photo", 'alt' => "Jason's Photo")); ?>
-						<span class="user-info">
-							<small>欢迎您,</small>
-							<?= $name ?>
-						</span>
-
-						<i class="icon-caret-down"></i>
-					</a>
-
-					<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-						<!-- <li>
-												<a href="#">
-													<i class="icon-cog"></i>
-													Settings
-												</a>
-											</li> -->
-
-						<li>
-							<?php echo $this->Html->link($this->Html->tag('i', "", array('class' => "icon-user")).'个人资料', array('controller' => "admin", 'action' => "basic"),  array('escape' => false)); ?>
-						</li>
-
-						<li class="divider"></li>
-
-						<li>
-							<?php echo $this->Html->link($this->Html->tag('i', "", array('class' => "icon-off")).'退出', array('controller' => "user", 'action' => "loggout"),  array('escape' => false)); ?>
-						</li>
-					</ul>
-				</li>
-				<? endif ?>
-			</ul><!-- /.ace-nav -->
-		</div><!-- /.navbar-header -->
-	</div><!-- /.container -->
+<!-- Header Area -->
+<div class="header">
+	<!-- Navigation Menu -->
+	<nav class="navbar navbar-fixed-top" role="navigation" style="padding-right:160px;">
+		<a id="footer" href="#signup-block">免费注册</a>
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#home">
+					<!-- Logo Text -->
+					<h1><?php echo $this->Html->image('/html/img/onwx.png')."&nbsp;$cakeSign"; ?></h1>
+				</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#home">首页</a></li>
+					<li><a href="#service">产品特色</a></li>
+					<li><a href="#works">定制服务</a></li>
+					<li><a href="#contact">联系我们</a></li>
+					<li><a href="#about">关于我们</a></li>
+					<li><?php echo $this->Html->link('登录', array('controller' => "user", 'action' => "login")); ?></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Navigation End -->
 </div>
+<!-- Header End -->

@@ -42,7 +42,7 @@ class FirstMigrationWebchat extends CakeMigration {
 					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 				),
 				'wcsess' => array(
-					'Id' => array('type' => 'integer', 'null' => false, 'length' => 38, 'key' => 'primary'),
+					'Id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
 					'FData' => array('type' => 'text', 'null' => false),
 					'FExpires' => array('type' => 'integer', 'length' => 11),
 					'FWebchat' => array('type' => 'string', 'length' => 38),
@@ -143,6 +143,18 @@ class FirstMigrationWebchat extends CakeMigration {
 					),
 					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 				),
+				'feedback' => array(
+					'Id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
+					'FName' => array('type' => 'string', 'length' => 100, 'null' => false, 'unique' => 1),
+					'FPhone' => array('type' => 'string', 'length' => 100, 'null' => false),
+					'FMessage' => array('type' => 'text'),
+					'FCreatedate' => array('type' => 'datetime'),
+					'FIP' => array('type' => 'varchar', 'null' => false),
+					'indexes' => array(
+						'PRIMARY' => array('column' => 'Id', 'unique' => 1)
+					),
+					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
+				)
 			),
 		),
 		'down' => array(

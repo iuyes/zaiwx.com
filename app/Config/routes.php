@@ -30,7 +30,7 @@ Router::mapResources('users');
 Router::mapResources('education');
 Router::mapResources('wx');
 CakePlugin::routes();
-Router::connect('/', array('controller' => 'user', 'action' => 'login'));
+Router::connect('/', array('controller' => 'welcome', 'action' => 'index'));
 Router::parseExtensions('json', 'rss');
 CroogoRouter::localize();
 require CAKE . 'Config' . DS . 'routes.php';
