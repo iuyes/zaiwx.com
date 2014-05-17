@@ -191,7 +191,7 @@
 						<br />
 						<!-- Contact Form -->
 						<form role="form" id="contactForm" method="post">
-							<div class="row">
+                                <div class="row">
 								<div class="col-md-4 col-sm-4">
 									<div class="form-group">
 										<input type="text" class="form-control" name="FName" id="name" placeholder="您的姓名" value="" required>
@@ -244,33 +244,50 @@
 	                <p>微信扫码左侧二维码<br>关注在微信官方微信公众号<br>关注在微信最新产品动态</p>
 	            </div>
 				<div class="span6 col-form" id="signup-block">
-			        <form accept-charset="UTF-8" action="/auth/identity/register" class="simple_form form form-stacked email-signup-form" id="new_identity" method="post">
+                    <form role="form" class="simple_form form form-stacked email-signup-form" id="regForm" method="post">
 			          	<fieldset>
 				            <div class="control-group">
-				              <label class="string required control-label" for="identity_name">您的名字</label>
+				              <label class="string required control-label" for="memberid">您的名字</label>
 				              <div class="controls">
-				                <input name="FName" id="identity_name" placeholder="你的名字" type="text" required="required">
+				                <input autocomplete="off" name="FMemberId" id="memberid" placeholder="你的名字" type="text" required="required">
 				              </div>
 				            </div>
 				            <div class="control-group">
-				              <label class="string required control-label" for="identity_email">联系邮箱</label>
+				              <label class="string required control-label" for="email">联系邮箱</label>
 				              <div class="controls">
-				                <input name="FEMail" id="identity_email" placeholder="工作邮箱" type="email" required="required">
+				                <input autocomplete="off" name="FEMail" id="email" placeholder="工作邮箱" type="email" required="required">
 				              </div>
 				            </div>
+                            <div class="control-group">
+                                <label class="string required control-label" for="phone">联系电话</label>
+                                <div class="controls">
+                                    <input autocomplete="off" name="FMobileNumber" id="phone" placeholder="联系电话" required="required">
+                                </div>
+                            </div>
 				            <div class="control-group">
-				              <label class="string required control-label" for="identity_password">密码</label>
+				              <label class="string required control-label" for="password">密码</label>
 				              <div class="controls">
-				                <input autocomplete="off" name="password" id="identity_password" placeholder="密码" type="password" required="required">
+				                <input autocomplete="off" name="FPassWord" id="password" placeholder="密码" type="password" required="required">
 				              </div>
 				            </div>
-
 				            <div class="align-right">
 				              <input class="btn btn-success pull-right" id="signup-btn" type="submit" value="免费注册">
 				            </div>
 			          </fieldset>
 					</form>
-			        <div class="help-block" style="margin-top:10px;color:#f8f8f8;">
+
+                    <!-- Alertbox for success -->
+                    <div id="regsuccess" class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        感谢您的注册
+                    </div>
+
+                    <!-- Alertbox for failure -->
+                    <div id="regerror" class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        注册失败
+                    </div>
+                    <div class="help-block" style="margin-top:10px;color:#f8f8f8;">
 			         	点击注册，表明你同意我们的服务条款和隐私政策。
 			        </div>
 		      	</div>

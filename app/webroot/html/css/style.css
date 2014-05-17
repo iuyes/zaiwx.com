@@ -1255,11 +1255,10 @@ hr{
 .contact-content .form-control,
 .contact-content form button { border-radius: 2px;}
 
-#success, 
-#error {
+#success, #error, #regsuccess, #regerror {
     display:none;
 }
-
+#regsuccess, #regerror { margin-top:10px;width: 300px;}
 /* To Top Starts */
 
 .totop {
@@ -1640,10 +1639,10 @@ line-height: 25.2px;
 font-size: 1.8rem;
 line-height: 2.52rem;
 height: 40px;
-margin-bottom: 20px;
 width: 300px;
 text-indent: 10px;
 color:#444;
+border:none;
 }
 #signup-btn {
 font-size: 24px;
@@ -1685,3 +1684,5 @@ color: #888E94;
 background: #686464;
 }
 .imac{width: 380px;height: 319px;background: url(../img/imac.png) no-repeat 0 0;}
+.controls label{font-weight: normal;}
+.controls{margin-bottom:20px;}

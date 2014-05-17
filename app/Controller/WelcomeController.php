@@ -70,6 +70,7 @@ class WelcomeController extends AppController {
 			));
 			if ($this->TPerson->validates(array('fieldList' => array('FMemberId', 'FEMail', 'FMobileNumber', 'FPassWord')))) {
 				$this->TPerson->id = $this->uid;
+                $this->TPerson->set('FullName', $this->request->data['FMemberId']);
 				$query = $this->TPerson->addUser($this->request->data);
 				$msg['state'] = 0;
 				$msg['msg'] = "注册失败。";
