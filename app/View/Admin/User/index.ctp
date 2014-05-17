@@ -56,15 +56,15 @@
 	?>
 	<div class="clearfix form-actions">
 		<div class="col-md-offset-3 col-md-9">
+			<a href="<?php echo Router::url('/'); ?>" class="btn btn-grey">
+				<i class="icon-arrow-left"></i>
+				返回首页
+			</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<button class="btn btn-info" type="submit">
 				<i class="icon-ok bigger-110"></i>
 				登录到后台
 			</button>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="<?php echo Router::url('/signup'); ?>" class="btn btn-success">
-				<i class="icon-pencil bigger-110"></i>
-				注册新的账号
-			</a>
 		</div>
 	</div>
 	<?php echo $this->Form->end(); ?>
