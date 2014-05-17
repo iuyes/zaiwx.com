@@ -68,10 +68,19 @@ class WelcomeController extends AppController {
 			    'required' => 'create',
 				'message' => "此账号已经存在了，请更换一个新的。"
 			));
-			if ($this->TPerson->validates(array('fieldList' => array('FMemberId', 'FEMail', 'FPassWord')))) {
+			if ($this->TPerson->validates(array('fieldList' => array('FMemberId', 'FEMail', 'FMobileNumber', 'FPassWord')))) {
 				$this->TPerson->id = $this->uid;
 				$query = $this->TPerson->addUser($this->request->data);
-				$msg['state'] = $query ? 1 : 0;
+				$msg['state'] = 0;
+				$msg['msg'] = "注册失败。";
+				if ($query) {
+					$data = $this->TPerson->findById($query);
+					$this->Auth->login($data['TPerson']);
+					$this->flashSuccess("注册成功。");
+					$msg['state'] = 1;
+					$msg['msg'] = "注册成功。";
+					$msg['redirect'] = Router::url('/admin');
+				}
 			} else {
 				$msg['state'] = 0;
 				$msg['msg'] = $this->WxFeedback->validationErrors;
