@@ -62,13 +62,9 @@ class UserController extends AppController {
 				$this->TPerson->id = $this->uid;
 				$query = $this->TPerson->addUser($this->request->data);
 				if ($query) {
-<<<<<<< HEAD
 					$data = $this->TPerson->findById($query);
 					$this->Auth->login($data['TPerson']);
 					$this->flashSuccess("注册成功。");
-=======
-					$this->flashSuccess("注册成功，请登录。");
->>>>>>> CakeWX/master
 					return $this->redirect(array('action' => "login"));
 				}
 			}

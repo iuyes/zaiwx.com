@@ -95,16 +95,6 @@ $(document).ready(function() {
             bootbox.alert("系统出错。");
         }
     });
-<<<<<<< HEAD
-
-    $(".u-chooses .media_preview_area").click(function(){
-        var delbox = $(this);
-        bootbox.confirm("确定要删除么？", function(result) {
-            result ? delbox.remove() : '';
-        });
-    });
-=======
->>>>>>> CakeWX/master
 });
 
 // 图文预览
@@ -137,14 +127,7 @@ $("#previewbox").on("click",function() {
         }
     });
 });
-<<<<<<< HEAD
 
-// 更换图文集
-$("#addTw").on("click", function(){
-    $.ajax({
-        url: ADMIN_WC_URL + "mPic?_a=twj",
-        async: false,
-=======
 function prebootbox(event) {
     var hids = $(".media_preview_area").length;
     var data = [];
@@ -162,7 +145,6 @@ function prebootbox(event) {
         url: tmpurl,
         async: false,
         data : data,
->>>>>>> CakeWX/master
         success: function(data, status){
             $("#aj_box").html(JSON.parse(data));
             bootbox.dialog({
@@ -180,17 +162,6 @@ function prebootbox(event) {
                                 $('#'+val).append("<input type=\"hidden\" name=\"data[WxDataTw][FTwj][]\" value=\"" + t_id +"\" />");
                                 selehtm += $('#'+val).outerHTML() + "&nbsp;";
                             });
-<<<<<<< HEAD
-                            $(".u-chooses").empty();
-                            $("#addTw").text("更换图文").prev().append(selehtm);
-                            $(".icon_item_selected").text("删除");
-                            $(".u-chooses .media_preview_area").click(function(){
-                                var delbox = $(this);
-                                bootbox.confirm("确定要删除么？", function(result) {
-                                    result ? delbox.remove() : '';
-                                });
-                            });
-=======
                             //$(".u-chooses").empty();
                             if(tmptype == "switem"){
                                 $("#addTw").prev().append(selehtm);
@@ -200,7 +171,6 @@ function prebootbox(event) {
                                 //console.log(selehtm);
                                 swnode.replaceWith(selehtm);
                             }
->>>>>>> CakeWX/master
                         }
                     },
                 }
@@ -210,10 +180,6 @@ function prebootbox(event) {
             bootbox.alert("系统出错。");
         }
     });
-<<<<<<< HEAD
-});
-
-=======
 }
 // 更换图文集
 $(document).on("click","#addTw",{atype:"switem"}, prebootbox);
@@ -224,7 +190,6 @@ $(".u-chooses").on("click",".delitem", function() {
         result ? delbox.remove() : '';
     });
 });
->>>>>>> CakeWX/master
 // 多图文判断JS
 $(".twSelect").on("change", function(){
     var type = $(this).val();

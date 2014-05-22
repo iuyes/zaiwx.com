@@ -569,11 +569,7 @@ class TPerson extends AppModel {
 		// $this->create();
 		// echo '<pre>';print_r($this->data);exit;
 		$query = $this->save($this->data, FALSE);
-<<<<<<< HEAD
 		if ($query) return $this->id;
-=======
-		if ($query) return $user;
->>>>>>> CakeWX/master
 	}
 	
 	/**
