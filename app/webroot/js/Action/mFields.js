@@ -71,7 +71,11 @@ function saveMenuData(temphtml, id) {
                 callback: function() {
 					var mus = new Object();
 					mus.FName = $('#temptitle').val();
+<<<<<<< HEAD
 					mus.FKeysOrLink = $('#tempurl').val();
+=======
+					mus.FKeysOrLink = encodeURIComponent($('#tempurl').val());
+>>>>>>> CakeWX/master
 					if (id) {
 						mus.Id = id;
 					}
@@ -84,7 +88,12 @@ function saveMenuData(temphtml, id) {
 				        success: function(data, status) {
 							data = JSON.parse(data);
 							if (data.state == 1) {
+<<<<<<< HEAD
 								_doMenu(edt, mus.FName, mus.FKeysOrLink, data.data); 	//操作菜单
+=======
+								var FKeysOrLink = $('#tempurl').val();
+								_doMenu(edt, mus.FName, FKeysOrLink, data.data); 	//操作菜单
+>>>>>>> CakeWX/master
 							}
 				        },
 				        error: function(){

@@ -95,6 +95,7 @@ $(document).ready(function() {
             bootbox.alert("系统出错。");
         }
     });
+<<<<<<< HEAD
 
     $(".u-chooses .media_preview_area").click(function(){
         var delbox = $(this);
@@ -102,6 +103,8 @@ $(document).ready(function() {
             result ? delbox.remove() : '';
         });
     });
+=======
+>>>>>>> CakeWX/master
 });
 
 // 图文预览
@@ -134,12 +137,32 @@ $("#previewbox").on("click",function() {
         }
     });
 });
+<<<<<<< HEAD
 
 // 更换图文集
 $("#addTw").on("click", function(){
     $.ajax({
         url: ADMIN_WC_URL + "mPic?_a=twj",
         async: false,
+=======
+function prebootbox(event) {
+    var hids = $(".media_preview_area").length;
+    var data = [];
+    var tmpurl = '',swnode = $(this).parent().parent().parent();
+    if(hids){
+        $(".media_preview_area").each(function(index) {
+            data[index] = $(this).attr("id");
+        });
+        data = $.unique(data);
+    }
+    tmpurl = event.data.atype == "switem" ? ADMIN_WC_URL + "mPic?_a=twj" : ADMIN_WC_URL + "mPic?_a=twj&_m=simple";
+    tmptype = event.data.atype;
+    //console.log(data.length);
+    $.ajax({
+        url: tmpurl,
+        async: false,
+        data : data,
+>>>>>>> CakeWX/master
         success: function(data, status){
             $("#aj_box").html(JSON.parse(data));
             bootbox.dialog({
@@ -157,6 +180,7 @@ $("#addTw").on("click", function(){
                                 $('#'+val).append("<input type=\"hidden\" name=\"data[WxDataTw][FTwj][]\" value=\"" + t_id +"\" />");
                                 selehtm += $('#'+val).outerHTML() + "&nbsp;";
                             });
+<<<<<<< HEAD
                             $(".u-chooses").empty();
                             $("#addTw").text("更换图文").prev().append(selehtm);
                             $(".icon_item_selected").text("删除");
@@ -166,6 +190,17 @@ $("#addTw").on("click", function(){
                                     result ? delbox.remove() : '';
                                 });
                             });
+=======
+                            //$(".u-chooses").empty();
+                            if(tmptype == "switem"){
+                                $("#addTw").prev().append(selehtm);
+                                $(".icon_item_selected").html("<span class='delitem'>删除</span><span class='pipe'>|</span><span class='editem'>修改</span>");
+                            } else {
+                                $(".icon_item_selected").html("<span class='delitem'>删除</span><span class='pipe'>|</span><span class='editem'>修改</span>");
+                                //console.log(selehtm);
+                                swnode.replaceWith(selehtm);
+                            }
+>>>>>>> CakeWX/master
                         }
                     },
                 }
@@ -175,8 +210,21 @@ $("#addTw").on("click", function(){
             bootbox.alert("系统出错。");
         }
     });
+<<<<<<< HEAD
 });
 
+=======
+}
+// 更换图文集
+$(document).on("click","#addTw",{atype:"switem"}, prebootbox);
+$(".u-chooses").on("click",".editem",{atype:"editem"}, prebootbox);
+$(".u-chooses").on("click",".delitem", function() {
+    var delbox = $(this).parent().parent().parent();
+    bootbox.confirm("确定要删除么？", function(result) {
+        result ? delbox.remove() : '';
+    });
+});
+>>>>>>> CakeWX/master
 // 多图文判断JS
 $(".twSelect").on("change", function(){
     var type = $(this).val();
