@@ -199,7 +199,7 @@ class AdminController extends AppController {
 			default:
 				if ($this->request->is('post') || $this->request->is('put')) {
 					$this->WxWcdata->set($this->request->data);
-					if ($this->WxWcdata->validates(array('fieldList' => array('FSignText')))) {
+					if ($this->WxWcdata->validates(array('fieldList' => array('')))) {
 						$query = $this->WxWcdata->saveData($this->request->data, $this->uid, $id);
 						if ($query) {
 							$this->Session->setFlash('修改成功。');
@@ -499,7 +499,6 @@ class AdminController extends AppController {
 								        </div>
 						       		  	<div class="appmsg_thumb_wrp">
 								            <img class="js_appmsg_thumb appmsg_thumb" src="'.$data[WxDataTw][FUrl].'">
-								            <i class="appmsg_thumb default">封面图片</i>
 								        </div>
 						        		<p class="appmsg_desc">'.$data[WxDataTw][FMemo].'</p>
 									</div>
@@ -522,7 +521,6 @@ class AdminController extends AppController {
 									        </div>
 							       		  	<div class="appmsg_thumb_wrp">
 									            <img class="js_appmsg_thumb appmsg_thumb" src="'.$vals[WxDataTw][FUrl].'">
-									            <i class="appmsg_thumb default">封面图片</i>
 									        </div>
 							        		<p class="appmsg_desc">'.$vals[WxDataTw][FMemo].'</p>
 										</div>
@@ -556,9 +554,10 @@ class AdminController extends AppController {
                         function even() {
                             $(this).addClass("selected");
                         }
-                        $(".media_preview_area").clicktoggle(even, odd);
-                        $(".media_preview_area").click(function(){
-                            $(".media_preview_area").removeClass("selected");
+
+                        $("#aj_box .media_preview_area").clicktoggle(even, odd);
+                        $("#aj_box .media_preview_area").click(function(){
+                            $("#aj_box .media_preview_area").removeClass("selected");
                             $(this).addClass("selected");
                             Atempids = [$(this).attr("id")];
                         });
@@ -601,7 +600,7 @@ class AdminController extends AppController {
 	                                }
 	                            }
 
-	                           $(".media_preview_area").clicktoggle(even, odd);
+	                           $("#aj_box .media_preview_area").clicktoggle(even, odd);
 	                           </script>';
 				}
 				exit(json_encode($html));
@@ -622,13 +621,12 @@ class AdminController extends AppController {
 										        </div>
 								       		  	<div class="appmsg_thumb_wrp">
 										            <img class="js_appmsg_thumb appmsg_thumb" src="'.$vals[WxDataTw][FUrl].'">
-										            <i class="appmsg_thumb default">封面图片</i>
 										        </div>
 								        		<p class="appmsg_desc">'.$vals[WxDataTw][FMemo].'</p>
 											</div>
 										</div>
 									    <div class="com_mask"></div>
-							            <i class="icon_item_selected">删除</i>
+							            <i class="icon_item_selected"><span class="delitem">删除</span><span class="pipe">|</span><span class="editem">修改</span></i>
 							       </div>
 								</div>&nbsp;';
 					}
@@ -775,6 +773,7 @@ class AdminController extends AppController {
 						if ($this->request->is('post')) {
 							$post = $this->request->data['post'];
 							$postJson['WxDataMus'] = json_decode($post, TRUE);
+							// print_r($postJson);exit;
 							$query = $this->WxDataMus->saveData($postJson, $wxId);
 							if ($query) {
 								$msg['state'] = 1;

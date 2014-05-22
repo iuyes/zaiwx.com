@@ -31,11 +31,6 @@ class WxDataKds extends AppModel {
 				'rule' => "notEmpty",
 				'message' => "必须填写",
 				'required' => true
-			),
-			'alphaNumeric' => array(
-				'rule' => "alphaNumeric",
-				'message' => "请填写字母或者数字",
-				'required' => true
 			)
 	    ),
 		'FKeyMacth' => array(
@@ -161,7 +156,7 @@ class WxDataKds extends AppModel {
 	function getMsg($webchat, $keywords) {
 		$content = array();
 		$suffix = ClassRegistry::init('WxWcdata')->getMsg('signtext', $webchat);
-		$data = $this->find('first', array('conditions' => array('FKey' => $keywords, 'FWebchat' => $webchat, 'AND' => array('OR' => array(array('FKeyMacth' => null), array('FKeyMacth' => 0)))), 'recursive' => 0));
+		$data = $this->find('first', array('conditions' => array("FIND_IN_SET('{$keywords}', REPLACE(FKey,'|',','))", 'FWebchat' => $webchat, 'AND' => array('OR' => array(array('FKeyMacth' => null), array('FKeyMacth' => 0)))), 'recursive' => 0));
 		if (!$data) {		// 模糊匹配			
 			$data = $this->find('first', array('conditions' => array("LOCATE(`Fkey`, '{$keywords}') >" => "0", 'FWebchat' => $webchat, 'FKeyMacth' => "1"), 'recursive' => 0));
 		}
