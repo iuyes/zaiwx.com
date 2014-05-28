@@ -16,7 +16,7 @@
 					<li data-transition="slidedown" data-slotamount="1">
 					   <?php echo $this->Html->image('/html/img/transparent.png'); ?>
 					   <!-- Heading -->
-					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免微信公众号服务平台</div>
+					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免费微信公众号服务平台</div>
 					   <div class="caption tp-caption sft custom_para text-center"  data-x="center" data-y="115" data-speed="500" data-start="2100" data-easing="easeOutBack">
 							迄今为止，最好用的微信第三方公众号服务平台。
 						</div>
@@ -90,7 +90,7 @@
 								<h4><i class="fa fa-edit blue"></i> 强大的后台管理功能。</h4>
 								<!-- Paragraph -->
 								<!-- Paragraph -->
-								<p>自动回复、关键字匹配、多图文素材管理等公众号基础功能完全无缝对接。强大的应用中心。（即将上线）</p>
+								<p>自动回复、关键字匹配、多图文素材管理等公众号基础功能完全无缝对接。强大的应用扩展中心。（即将上线）</p>
 							</div>
 						</div>
 					</div>
