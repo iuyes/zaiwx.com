@@ -16,7 +16,7 @@
 					<li data-transition="slidedown" data-slotamount="1">
 					   <?php echo $this->Html->image('/html/img/transparent.png'); ?>
 					   <!-- Heading -->
-					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免费微信公众号服务平台</div>
+					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免费的微信公众号服务平台</div>
 					   <div class="caption tp-caption sft custom_para text-center"  data-x="center" data-y="115" data-speed="500" data-start="2100" data-easing="easeOutBack">
 							迄今为止，最好用的微信第三方公众号服务平台。
 						</div>
