@@ -16,9 +16,9 @@
 					<li data-transition="slidedown" data-slotamount="1">
 					   <?php echo $this->Html->image('/html/img/transparent.png'); ?>
 					   <!-- Heading -->
-					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免费的微信公众号服务平台</div>
+					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-speed="700" data-start="1700" data-easing="easeOutBack">永久免微信公众号服务平台</div>
 					   <div class="caption tp-caption sft custom_para text-center"  data-x="center" data-y="115" data-speed="500" data-start="2100" data-easing="easeOutBack">
-							我们不是微信的卖水人，而是您的挖井人。
+							迄今为止，最好用的微信第三方公众号服务平台。
 						</div>
 						<!-- Image -->
 						<div class="caption sfb" data-x="center" data-y="166" data-speed="1000" data-start="3200" data-easing="easeOutBack">
@@ -27,9 +27,9 @@
 					</li>
 					<!-- Slider one -->
 					<li data-transition="slideup" data-slotamount="1">
-					   <div class="caption tp-caption sft large_bold_white"  data-x="left" data-y="145" data-speed="700" data-start="1700" data-easing="easeOutBack">CakeWX<br><span style="font-size:30px;">开源免费的微信公众平台开发框架</span></div>
+					   <div class="caption tp-caption sft large_bold_white"  data-x="left" data-y="145" data-speed="700" data-start="1700" data-easing="easeOutBack">CakeWX<br><span style="font-size:30px;">绝壁好用的微信公众平台开发框架</span></div>
 					   <div class="caption tp-caption sfl custom_para"  data-x="left" data-y="245" data-speed="500" data-start="2100" data-easing="easeOutBack">
-							运行环境：Apache + PHP + MySQL<br>官方QQ交流群：295169425
+							运行环境：Apache + PHP + MySQL<br>官方QQ交流群：295169425</font>
 						</div>
 						<!-- Button -->
 						<div class="caption tp-caption sfl" data-x="left" data-y="320" data-speed="500" data-start="2600" data-easing="easeOutBack">
@@ -63,7 +63,7 @@
 								<!-- Heading -->
 								<h4><i class="fa fa-folder-open-o blue"></i> 开源免费</h4>
 								<!-- Paragraph -->
-								<p>平台基于自主开发软件CakePHP搭建，完全开源免费使用。可独立下载源码，搭建自主平台，不收取任何费用。</p>
+								<p>基于CakePHP搭建，小巧精致，完全免费使用。可独立下载源码，搭建自主平台。</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
@@ -79,7 +79,7 @@
 						<div class="col-md-6 col-sm-6">
 							<div class="services-item">
 								<h4><i class="fa fa-bars blue"></i> 自定义拖拽菜单。</h4>
-								<p>后台可实时拖拽实现微信公众号自定义菜单，更加简单易用。</p>
+								<p>后台可实时拖拽实现微信公众号自定义菜单，更加简单易用，史上最好用的公众号服务平台。</p>
 							</div>
 						</div>
 						
@@ -90,7 +90,7 @@
 								<h4><i class="fa fa-edit blue"></i> 强大的后台管理功能。</h4>
 								<!-- Paragraph -->
 								<!-- Paragraph -->
-								<p>自动回复、关键字匹配、多图文素材管理等公众号基础功能完全无缝对接。定期更新增加新的模块功能供您使用。</p>
+								<p>自动回复、关键字匹配、多图文素材管理等公众号基础功能完全无缝对接。强大的应用中心。（即将上线）</p>
 							</div>
 						</div>
 					</div>
