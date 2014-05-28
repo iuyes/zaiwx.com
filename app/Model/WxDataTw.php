@@ -38,7 +38,8 @@ class WxDataTw extends AppModel {
 	    )
 	);
 	
-	public $type = array('0' => "单图文", '1' => "多图文");
+	public $type = array('0' => "文章图文", '1' => "图文集");
+	public $conType = array('tw' => "单图文", 'twj' => "多图文", 'events' => '活动图文');
 	
 	/**
 	 * undocumented function
@@ -52,10 +53,43 @@ class WxDataTw extends AppModel {
 		$this->set('Id', $this->id ? $this->id : String::uuid());
 		$this->set('FUpdatedate', date('Y-m-d H:i:s'));
 		$this->set('FWebchat', $id);
-		$this->data['WxDataTw']['FTwj'] = serialize($this->data['WxDataTw']['FTwj']);
- 		// print_r($this->data);exit;
-		$query = $this->save($this->data);
-		if ($query) return $this->id;
+		$twj = array_filter($this->data['WxDataTw']['FTwj']);
+		$this->data['WxDataTw']['FTwj'] = serialize(array_values($twj));
+		$twData = $this->data;
+		$query = $this->save($this->data, FALSE);
+		if ($query) {
+			switch ($twData['WxDataTw']['FTwType']) {
+				case 'events':
+					$dbExtra = ClassRegistry::init('WxDataTwEvent');
+					$eData = $dbExtra->find('first', array('conditions' => array('FOwnerId' => $this->id), 'recursive' => 0));
+					if (isset($eData['WxDataTwEvent']['Id'])) {
+						$dbExtra->id = $eData['WxDataTwEvent']['Id'];
+					} else {
+						$dbExtra->set('Id', String::uuid());
+						$dbExtra->set('FCreatedate', date('Y-m-d H:i:s'));
+					}
+					$dbExtra->set('FOwnerId', $this->id);
+					$dbExtra->save();
+					break;
+				default:
+			}
+			return $this->id;
+		} 
+	}
+	
+	/**
+	 * 获取图文类型
+	 *
+	 * @return void
+	 * @author niancode
+	 **/
+	function _getTwType($type, $FTwType = null)
+	{
+		if ($type == 0) {
+			return $this->conType[$FTwType] ? $this->conType[$FTwType] : $this->conType['tw'];
+		} else {
+			return $this->conType['twj'];
+		}
 	}
 	
 	/**
@@ -70,7 +104,7 @@ class WxDataTw extends AppModel {
 	    );
 		foreach ($data as $key => &$vals)
 		{	
-			$vals['WxDataTw']['C_FType'] = $this->type[$vals['WxDataTw']['FType']];
+			$vals['WxDataTw']['C_FType'] = $this->_getTwType($vals['WxDataTw']['FType'], $vals['WxDataTw']['FTwType']);
 		}
 	    return $data;
 	}
@@ -81,27 +115,96 @@ class WxDataTw extends AppModel {
 	 * @return void
 	 * @author apple
 	 **/
-	function getDataList($id = NULL, $cid = NULL, $ids = NULL) {	
+	function getDataList($id = NULL, $cid = NULL, $ids = NULL, $conditions = NULL) {	
 		if ($cid != NULL) {
-			$conditions = $id == NULL ? array('Id' => $cid) : array('Id' => $cid, 'FWebchat' => $id);
-			$data = $this->find('first', array('conditions' => $conditions, 'recursive' => 0));
+			$conditions = $id == NULL ? array('WxDataTw.Id' => $cid) : array('WxDataTw.Id' => $cid, 'WxDataTw.FWebchat' => $id);
+			$attr = array(
+				'conditions' => array(
+				),
+				'joins' => array(
+					array(
+						'table' => "{$this->tablePrefix}wcdata_tw_events",
+			            'alias' => 'WxDataTwEvent',
+			            'type' => 'LEFT',
+			            'conditions' => array(
+			                'WxDataTw.Id = WxDataTwEvent.FOwnerId'
+			            )
+					)
+				),
+				'fields' => array(
+					"WxDataTw.*",
+					"WxDataTwEvent.FMaxPersonCount", 
+					"WxDataTwEvent.FAddress", 
+					"WxDataTwEvent.FPersonCount",
+					"WxDataTwEvent.FStartdate"
+				),
+				'group' => array('WxDataTw.Id'),
+				'order' => array('FCreatedate DESC')
+			);
+			if ($conditions) $attr['conditions'] = array_merge($attr['conditions'], $conditions);
+			$data = $this->find('first', $attr);
 			if (is_array($data)) {
 				$data['WxDataTw']['FTwj'] = unserialize($data['WxDataTw']['FTwj']);
 				$data['WxDataTw']['FPreTwj'] = implode(',', $data['WxDataTw']['FTwj']);
 			}
 		} else {
-			$conditions = array('FWebchat' => $id);
+			$conditions['FWebchat'] = $id;
 			if ($ids) $conditions['Id'] = $ids;
 			$data['datalist'] = $this->find('all', array('conditions' => $conditions, 'order' => "FCreatedate desc", 'recursive' => 0));
 			$data['count'] = $this->find('count', array('conditions' => $conditions, 'recursive' => 0));
 			foreach ($data['datalist'] as $key => &$vals) {	
-				$vals['WxDataTw']['C_FType'] = $this->type[$vals['WxDataTw']['FType']];
+				$vals['WxDataTw']['C_FType'] = $this->conType[$vals['WxDataTw']['FTwType']] ? $this->conType[$vals['WxDataTw']['FTwType']] : reset($this->conType);
 				$vals['WxDataTw']['FTwj'] = unserialize($vals['WxDataTw']['FTwj']);
 			}
 			// echo $this->getLastQuery();
 			// echo '<pre>';print_r($data);exit;
 		}
 		return $data;
+	}
+	
+	/**
+	 * undocumented function
+	 *
+	 * @return void
+	 * @author niancode
+	 **/
+	function getGaryDataList($id, $cid) {
+		$data = $this->getDataList($id, $cid);
+		foreach ($data['WxDataTw']['FTwj'] as $key => &$vals) {
+			$findData = $this->findById($vals);
+			$findData['WxDataTw']['FUrl'] = Router::url($findData['WxDataTw']['FUrl'], TRUE);
+			$vals = $findData['WxDataTw'];
+		}
+		return $data;
+	}
+	
+	/**
+	 * undocumented function
+	 *
+	 * @return void
+	 * @author niancode
+	 **/
+	function getCategories($id, $baseurl) {
+		$newarr = array();
+		$conditions['FWebchat'] = $id;
+		foreach ($this->conType as $key => $vals) {
+			switch ($key)  {
+				case 'tw':
+					$conditions['FTwType'] = null;
+					$conditions['FType']  = 0;
+					break;
+				case 'twj':
+					$conditions['FType']  = 1;
+					break;
+				default:
+					$conditions['FType']  = 0;
+					$conditions['FTwType']  = $key;
+			}
+			$count = $this->find('count', array('conditions' => $conditions, 'recursive' => 0));
+			$newarr[] = array('key' => $key, 'name' => $vals, 'count' => $count, 'link' => "{$baseurl}?_val={$key}");
+			$count = 0;
+		}
+		return $newarr;
 	}
 	
 	/**
@@ -129,18 +232,12 @@ class WxDataTw extends AppModel {
 		$data = $this->find('first', array('conditions' => array('Id' => $twId), 'recursive' => 0));
 		$WX_twj = isset($data['WxDataTw']['FTwj']) ? unserialize($data['WxDataTw']['FTwj']) : FALSE;
 		$WX_type = isset($data['WxDataTw']['FType']) ? $data['WxDataTw']['FType'] : 0;
-		$returnArr['count'] = 1;
-		$returnArr['items'][0] = array(
-									'Title' => $data['WxDataTw']['FTitle'],
-									'Description' => $data['WxDataTw']['FMemo'],
-									'PicUrl' => Router::url($data['WxDataTw']['FUrl'], TRUE),
-									'Url' => $data['WxDataTw']['FLink'] ? $data['WxDataTw']['FLink'] : $this->_getFTwjLink($data['WxDataTw']['Id'])
-								);
+		$returnArr['count'] = 0;
 		if ($WX_type == 1) {
 			$twjData = $this->find('all', array('conditions' => array('Id' => $WX_twj), 'recursive' => 0));
 			$itemsArr = array();
 			foreach ($twjData as $key => $value) {
-				$returnArr['items'][$key+1] = array(
+				$returnArr['items'][] = array(
 									'Title' => $value['WxDataTw']['FTitle'],
 									'Description' => $value['WxDataTw']['FMemo'],
 									'PicUrl' => Router::url($value['WxDataTw']['FUrl'], TRUE),
