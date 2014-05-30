@@ -108,5 +108,9 @@ var ADMIN_WC_URL = '<?= Router::url($WC_BASE) ?>';
 		<div id='ajcont' style="display:none">
 			<div id="aj_box"></div>
 		</div>
+		<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc6228d305de346509e945fdcf38501c4' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 </html>
