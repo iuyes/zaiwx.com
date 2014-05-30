@@ -12,7 +12,7 @@ class UserController extends AppController {
 	
 	public function beforeFilter() {
 	    parent::beforeFilter();
-	    $this->Auth->allow('login', 'register'); 
+	    $this->Auth->allow('login', 'register', 'version'); 
 		$this->loadModel("TPerson");
 	}
 	
@@ -87,6 +87,16 @@ class UserController extends AppController {
 		$this->redirect("/");
 	}
 
+	/**
+	 * undocumented function
+	 *
+	 * @return void
+	 * @author niancode
+	 **/
+	function version()
+	{
+		echo $this->version.'<br />'.$this->verdate;exit;
+	}
 
 	
 }

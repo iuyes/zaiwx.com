@@ -36,23 +36,25 @@ KindEditor.ready(function(K) {
                 clickFn : function(url, title, width, height, border, align) {
                     iconText.val(url);
                     editor.hideDialog();
+                    $('.js_appmsg_thumb').attr('src',BASE_URL+url).show();
+                    $('.appmsg_thumb.default').hide();
                 }
             });
         });
     });
 
 	K.create('#WxDataTwFContent', {
-		width: '700px',
+		width: '600px',
+        minWidth: '600px',
 		height: '300px',
 		items: [
-		        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+		        'source', '|', 'undo', 'redo', '|', 'preview', 'template', 'code', 'cut', 'copy', 'paste',
 		        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 		        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-		        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+		        'superscript', 'clearhtml', 'selectall', '/',
 		        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
 		        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
-		        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
-		        'anchor', 'link', 'unlink', '|', 'about'
+		        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'link', 'unlink'
 		],
 		allowImageUpload: true,
 		uploadJson: UPLOAD_URL + '?prefix',
@@ -95,13 +97,6 @@ $(document).ready(function() {
             bootbox.alert("系统出错。");
         }
     });
-
-    $(".u-chooses .media_preview_area").click(function(){
-        var delbox = $(this);
-        bootbox.confirm("确定要删除么？", function(result) {
-            result ? delbox.remove() : '';
-        });
-    });
 });
 
 // 图文预览
@@ -135,11 +130,21 @@ $("#previewbox").on("click",function() {
     });
 });
 
-// 更换图文集
-$("#addTw").on("click", function(){
+function prebootbox(event) {
+    var hids = $(".media_preview_area").length;
+    var data = [], thisitem = $(this).parent().parent();
+    var tmpurl = ADMIN_WC_URL + "mPic?_a=twj&_val=tw";
+    if(hids){
+        $(".media_preview_area").each(function(index) {
+            data[index] = $(this).attr("id");
+        });
+    }
+    data = '';
+    //console.log(data.length);
     $.ajax({
-        url: ADMIN_WC_URL + "mPic?_a=twj",
+        url: tmpurl,
         async: false,
+        data : data,
         success: function(data, status){
             $("#aj_box").html(JSON.parse(data));
             bootbox.dialog({
@@ -154,18 +159,15 @@ $("#addTw").on("click", function(){
                             var selehtm = '';
                             $.each(Atempids, function(key,val){
                                 var t_id = $('#'+val).attr('id');
-                                $('#'+val).append("<input type=\"hidden\" name=\"data[WxDataTw][FTwj][]\" value=\"" + t_id +"\" />");
-                                selehtm += $('#'+val).outerHTML() + "&nbsp;";
+                                //console.log($('#'+val).find('h4 a').text());
+                                thisitem.find('h4 a').text($('#'+val).find('h4 a').text());
+                                thisitem.find('.js_appmsg_thumb').attr('src',$('#'+val).find('.appmsg_thumb_wrp img').attr('src'));
+                                thisitem.find('.js_appmsg_thumb').show();
+                                thisitem.find('.default').hide();
+                                thisitem.find("input:hidden").attr('value',t_id);
+                                //selehtm += $('#'+val).outerHTML() + "&nbsp;";
                             });
-                            $(".u-chooses").empty();
-                            $("#addTw").text("更换图文").prev().append(selehtm);
-                            $(".icon_item_selected").text("删除");
-                            $(".u-chooses .media_preview_area").click(function(){
-                                var delbox = $(this);
-                                bootbox.confirm("确定要删除么？", function(result) {
-                                    result ? delbox.remove() : '';
-                                });
-                            });
+
                         }
                     },
                 }
@@ -175,8 +177,7 @@ $("#addTw").on("click", function(){
             bootbox.alert("系统出错。");
         }
     });
-});
-
+}
 // 多图文判断JS
 $(".twSelect").on("change", function(){
     var type = $(this).val();
@@ -187,4 +188,27 @@ $(".twSelect").on("change", function(){
     } else{
         $("#twj").show();
     }
+});
+var scntDiv = $('#js_appmsg_preview');
+var i = $('.js_appmsg_item').size() + 1;
+$("#js_add_appmsg").on("click", function() {
+    $('<div class="appmsg_item js_appmsg_item "><img class="js_appmsg_thumb appmsg_thumb" src=""><i class="appmsg_thumb default">缩略图</i><h4 class="appmsg_title"><a onclick="return false;" href="javascript:void(0);" target="_blank">标题</a></h4><div class="appmsg_edit_mask"><a class="icon18_common edit_gray js_edit" data-id="' + i +'" onclick="return false;" href="javascript:void(0);">编辑</a><a class="icon18_common del_gray js_del" data-id="' + i +'" onclick="return false;" href="javascript:void(0);">删除</a></div><input type="hidden" name="data[WxDataTw][FTwj][]" value=""></div>').appendTo(scntDiv);
+    i = i+1;
+    return false;
+});
+$(".media_preview_area").on("click",".js_edit", prebootbox);
+$(".media_preview_area").on("click",".js_del", function() {
+    if($(this).parent().parent().attr('id') == 'appmsgItem2'){
+        alert("图文集至少需要两条图文。");
+        return false;
+    } else {
+        var jsitem = $(this).parent().parent();
+        jsitem.remove();
+    }
+});
+$('#WxDataTwFTitle', '.singleitem').keyup(function() {
+   $('.appmsg_title a').text($(this).val());
+});
+$('#WxDataTwFMemo', '.singleitem').keyup(function() {
+    $('.appmsg_desc').text($(this).val());
 });
