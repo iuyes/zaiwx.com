@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</section>
-	
+	<div class="container ann" style="text-align:center;line-height: 30px;color:#f00;">推荐使用Chrome，safari，Firefox火狐浏览器浏览器，获得最佳使用体验。</div>
 	<!-- Main Content -->
 	<div class="main-content">	
 		<section id="service">
