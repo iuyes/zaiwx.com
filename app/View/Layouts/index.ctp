@@ -21,15 +21,12 @@
 		'/html/js/jquery.nav',
 		'/html/js/jquery.stellar.min',
 		'/html/js/waypoints.min',
-		'/html/js/masonry.pkgd.min',
 		'/html/js/jquery.countTo',
-		'/html/js/jquery.gmap.min',
 		'/html/js/jquery.nicescroll.min',
 		'/html/js/jquery.form',
 		'/html/js/jquery.validate.min',
 		'/html/js/placeholders',
 		'/html/js/respond.min',
-		'/html/js/html5shiv',
 		'/html/js/contact',
 		'/html/js/custom'
 	), array('block' => "script_basic", 'inline' => false));
