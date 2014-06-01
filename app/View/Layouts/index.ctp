@@ -7,7 +7,6 @@
 		'/html/css/animate.min',
 		'/html/css/magnific-popup',
 		'/html/css/settings',
-		'/html/css/font-awesome.min',
 		'/html/css/style'
 	), null, array('block' => "css_basic", 'inline' => false));
 	
