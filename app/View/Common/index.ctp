@@ -179,7 +179,7 @@
 					</div>
 				</div>
 				<div class="contact-map">
-					<?php echo $this->Html->image('/html/img/mp.png'); ?>
+					<?php echo $this->Html->image('http://s01.liunian.mobi/zaiwx/images/mp.png'); ?>
 				</div>
 			
 				<div class="container">
