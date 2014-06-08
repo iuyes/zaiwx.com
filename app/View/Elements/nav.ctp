@@ -1,7 +1,7 @@
 <!-- Header Area -->
 <div class="header">
 	<!-- Navigation Menu -->
-	<nav class="navbar navbar-fixed-top" role="navigation" style="padding-right:160px;">
+	<div class="navbar navbar-fixed-top" role="navigation" style="padding-right:160px;">
 		<a id="footer" href="#signup-block">免费注册</a>
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -23,7 +23,7 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</div>
 	<!-- Navigation End -->
 </div>
 <!-- Header End -->
