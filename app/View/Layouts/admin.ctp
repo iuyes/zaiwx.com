@@ -85,7 +85,7 @@ var ADMIN_WC_URL = '<?= Router::url($WC_BASE) ?>';
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?6141b747e7efcb638aa25305c2817fe4";
+  hm.src = "//hm.baidu.com/hm.js?c6228d305de346509e945fdcf38501c4";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
