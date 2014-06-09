@@ -26,16 +26,6 @@ class WxWcdata extends AppModel {
 			'message' => "必须填写",
 			'required' => true
 	    ),
-	    'FDefaultContent' => array(
-			'rule' => "notEmpty",
-			'message' => "必须填写",
-			'required' => true
-	    ),
-		'FFollowContent' => array(
-			'rule' => "notEmpty",
-			'message' => "必须填写",
-			'required' => true
-	    ),
 		'FFollowType' => array(
 			'rule' => "notEmpty",
 			'message' => "必须填写",
