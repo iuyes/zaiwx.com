@@ -123,7 +123,6 @@ class WxReply extends AppModel {
 		$wxTpl = $wxTpl[$msgType];
 		switch ($msgType) {
 			case 'text':
-				$msgType = "transfer_customer_service";
 				$resultStr = sprintf($wxTpl, $this->fromUsername, $this->toUsername, $this->time, $msgType, $WX_data);
 				break;
 			case 'news':
