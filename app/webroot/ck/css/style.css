@@ -1,0 +1,157 @@
+/************************
+Designed by : http://responsivewebinc.com
+************************/
+/* Basic CSS starts */
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+.clearfix { display: inline-table; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+body{
+	font-size:14px;
+	font-family: 'Microsoft Yahei', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	overflow:hidden !important;
+	background: #609cec url("http://s01.liunian.mobi/cakewx/web/overlay.png") repeat;
+}
+
+h4 { font-size: 21px; }
+
+p{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:hover,a:active,a:focus {
+	outline: 0;
+	text-decoration: none;
+}
+
+hr{
+	border-top:0px;
+	border-bottom:1px solid #f8f8f8;
+}
+
+:focus {
+	outline:none;
+}
+
+::-moz-focus-inner {
+	border:0;
+}
+/* Revoluion slider */
+
+.tp-banner-container{
+	width:100%;
+	position:relative;
+	box-shadow:0px 0px 1px rgba(0,0,0,0.4);
+}
+
+.tp-banner{
+	width:100%;
+	position:relative;
+	overflow: hidden;
+}
+
+.tp-banner ul{
+	display: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tp-banner .tp-caption{
+	font-family:"Open Sans", sans-serif !important;
+}
+
+.tp-banner .tp-caption.large_bold_white{
+	font-size:35px;
+	line-height:60px;
+}
+
+.tp-banner .custom_para{
+	font-size:16px;
+	line-height:30px;
+	color:#fff;
+	left:607px;
+}
+
+.tp-banner .btn-slider{
+	background:transparent;
+	color:#fff;
+	border:0px;
+	padding:11px 16px;
+	font-size:15px;
+	border-radius:3px;
+	border:2px solid #fff;
+}
+
+.tp-banner .btn-slider:hover{
+	color:#555;
+	background:#fff;
+}
+
+.whobuy{
+	border-bottom:1px solid #eee;
+}
+
+.whobuy .container{
+	max-width:1000px;
+}
+
+.whobuy h2{
+	color:#fff;
+	font-size:32px;
+	margin-top:0;
+	font-weight: normal;
+}
+
+.whobuy h4{
+	font-size:17px;
+	font-weight:600;
+	color:#fff;
+	margin:0 auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left: 0;
+}
+
+.whobuy h4 i{
+	margin-right:15px;
+	font-size:19px;
+	display:inline-block;
+	position:relative;
+	top:2px;
+	width:50px;
+	height:50px;
+	line-height:50px;
+	border-radius:100px;
+	text-align:center;
+	background:#fff;
+	color:#777;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+}
+
+.container {
+margin-right: auto;
+margin-left: auto;
+padding-left: 15px;
+padding-right: 15px;
+color:#FFF;
+}
