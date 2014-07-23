@@ -1395,135 +1395,143 @@ hr{
 	.blog .grid .item { width: 100% !important; }
 }
 
-/*blue 配色*/
+/*green 配色*/
 .color {
-  color: #609cec !important;
+    color: #51d466 !important;
 }
 .br-color {
-  background: #609cec !important;
+    background: #51d466 !important;
 }
 /* Theme Default Button */
 .btn-theme {
-  background: #609cec;
+    background: #51d466;
 }
 .btn-theme:hover {
-  background: #528fe2;
+    background: #42c557;
 }
 /* Border */
 .bor {
-  background: #609cec;
+    background: #51d466;
 }
 /* Navigation Menu */
 .header .navbar .navbar-brand > h1 > i {
-  color: #609cec;
+    color: #51d466;
 }
 .header .navbar .navbar-nav > li > a:hover {
-  background: #609cec !important;
+    background: #51d466 !important;
 }
 .header .navbar .navbar-nav > li > a:focus {
-  background: #609cec !important;
+    background: #51d466 !important;
 }
 .header .navbar .navbar-nav > li.active > a {
-  background: #609cec !important;
+    background: #51d466 !important;
 }
 .header .navbar .navbar-toggle {
-  background: #609cec;
+    background: #51d466;
 }
 /* Default Heading */
 .default-heading .dh-icon i {
-  color: #609cec;
+    color: #51d466;
 }
 /* Slider */
 .tp-banner-container {
-  background: #609cec url("../img/overlay.png") repeat;
-  background-size: 252px 230px;
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
+}
+/* Services Block */
+.services {
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
 }
 /* Team */
 .team .tlinks a {
-  color: #609cec;
+    color: #51d466;
 }
 .team .tlinks a:hover {
-  color: #528fe2;
+    color: #42c557;
 }
 /* Pricing Block */
 .pricing .ptable-star i {
-  color: #609cec;
+    color: #51d466;
 }
 .pricing .pricing-table .ptable-icon {
-  color: #609cec;
+    color: #51d466;
 }
 .pricing .pricing-table .ptable-title i {
-  color: #609cec;
+    color: #51d466;
 }
 /* Testimonial Block */
 .testimonial .quote span {
-  background: #609cec;
+    background: #51d466;
 }
 /* Quote two */
 .quote-two .btn-xtra {
-  background: #609cec !important;
-  border-color: #609cec !important;
+    background: #51d466 !important;
+    border-color: #51d466 !important;
 }
 .quote-two .btn-xtra:hover {
-  background: #528fe2 !important;
-  border-colro: #528fe2 !important;
+    background: #42c557 !important;
+    border-colro: #42c557 !important;
 }
-
+/* Portfolio Block */
+.portfolio .portfolio-content .p-hover i {
+    background: #51d466;
+}
 /* About Us Block */
 .about .about-heading {
-  background: #609cec url("../img/overlay.png") repeat;
-  background-size: 252px 230px;
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
 }
 .about .about-logo i {
-  color: #528fe2;
+    color: #42c557;
 }
 .about .about-inner {
-  background: #609cec url("../img/overlay.png") repeat;
-  background-size: 252px 230px;
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
 }
 .about .about-inner .per {
-  color: #609cec;
+    color: #51d466;
 }
 /* Subscribe */
 .subscribe .heading i {
-  background: #609cec;
+    background: #51d466;
 }
 /* Blog Block */
 .blog .grid .grid-entry .grid-img i {
-  background: #609cec !important;
+    background: #51d466 !important;
 }
 .blog .grid .grid-entry .grid-quote {
-  background: #609cec;
+    background: #51d466;
 }
 .blog .grid .grid-entry .read-more i {
-  color: #609cec !important;
+    color: #51d466 !important;
 }
 /* CTA Block */
 .cta {
-  background: #609cec url("../img/overlay.png") repeat;
-  background-size: 252px 230px;
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
 }
 /* Who should buy this */
 .whobuy {
-  background: #609cec url("../img/overlay.png") repeat;
-  background-size: 252px 230px;
+    background: #51d466 url("../img/overlay.png") repeat;
+    background-size: 252px 230px;
 }
 /* Client */
 .client .popover h3 {
-  background: #609cec;
+    background: #51d466;
 }
 /* Contact Block */
 .contact .contact-info .info-item i {
-  color: #609cec;
+    color: #51d466;
 }
 .contact form label {
-  color: #609cec;
+    color: #51d466;
 }
 .contact form input.error {
-  border-color: #609cec;
+    border-color: #51d466;
 }
 .contact form textarea.error {
-  border-color: #609cec;
+    border-color: #51d466;
 }
 
 .index_hr {
@@ -1645,3 +1653,17 @@ background: #686464;
 .imac{width: 380px;height: 319px;background: url(../img/imac.png) no-repeat 0 0;}
 .controls label{font-weight: normal;}
 .controls{margin-bottom:20px;}
+/*微小区*/
+.bdt{border-top:1px solid #DDD;}
+#examples h5{
+    font-size: 40px;
+    padding-bottom:15px;
+}
+.fl{float: left}.fr{float: right;}
+.expd{padding:30px 0;}
+#examples img{border: 2px solid #DDD;}
+.index-h2 span{margin:80px 0 0 50px;font-size: 26px;color: #666;}
+p, .txt-al{text-align: left;}
+.bgwhite{background:#FFF;}
+#moshi{text-align: center;}
+.txt-center, .contact-info p{text-align: center;}
