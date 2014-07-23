@@ -15,9 +15,9 @@
 					<li data-transition="slidedown" data-slotamount="1">
 					   <?php echo $this->Html->image('/html/img/transparent.png'); ?>
 					   <!-- Heading -->
-					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-start="1700" data-easing="easeOutBack">微小区,本地小区移动O2O解决方案。</div>
+					   <div class="caption tp-caption sft large_bold_white" data-x="center" data-y="60" data-start="1700" data-easing="easeOutBack">微小区，本地小区移动O2O解决方案。</div>
 					   <div class="caption tp-caption sft custom_para text-center"  data-x="center" data-y="115" data-speed="500" data-start="2100" data-easing="easeOutBack">
-                           微小区, 打造最实用的移动互联网社区生活服务平台！创建一个低成本,高效,多元化本地O2O社区生态圈。
+                           微小区，打造最实用的移动互联网社区生活服务平台！创建一个低成本，高效，多元化本地O2O社区生态圈。
 						</div>
 						<!-- Image -->
 						<div class="caption sfb" data-x="center" data-y="166" data-speed="1000" data-start="3200" data-easing="easeOutBack">
@@ -49,7 +49,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div  style="width: 460px;margin:0 auto">
                             <h3>小区商户电子商务平台</h3>
-                            <p>主要为小区内商户提供电子商务O2O平台，小区商户可方便快速的建立自己的网络销售平台，提一条龙式的移动平台，网店商铺介绍,打折优惠信息,店铺详细地址,在线购物,交流平台，在给小区居民提供遍历服务的同时也给物业, 本地商铺带来新的盈利模式。</p>
+                            <p>主要为小区内商户提供电子商务O2O平台，小区商户可方便快速的建立自己的网络销售平台，提一条龙式的移动平台，网店商铺介绍，打折优惠信息，店铺详细地址，在线购物，交流平台，在给小区居民提供遍历服务的同时也给物业， 本地商铺带来新的盈利模式。</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 txt-center">
@@ -66,7 +66,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div  style="width: 460px;margin:0 auto">
                             <h3>小区交流互动平台</h3>
-                            <p>为小区内居民提供便利的移动端交流平台,打造一个极具用户粘性的本地社区服务,生活平台。</p>
+                            <p>为小区内居民提供便利的移动端交流平台，打造一个极具用户粘性的本地社区服务，生活平台。</p>
                         </div>
                     </div>
                 </div>
@@ -76,6 +76,27 @@
         <section id="moshi" class="expd bdt">
             <div class="portfolio-content">
                 <?php echo $this->Html->image('/html/img/moshi.png', array('alt' => "微小区运营模式")); ?>
+            </div>
+        </section>
+        <section id="baojia" class="expd bdt">
+            <div class="container">
+                <div class="heading text-center">
+                    <h5 style="font-size: 40px;">产品报价</h5>
+                    <div class="bor"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 txt-center">
+                    <div class="info-item">
+                        <i class="fa fa-group" style="font-size: 60px;color:#00CC00;"></i>
+                        <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年</h4>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 txt-center">
+                    <div class="info-item">
+                        <i class="fa fa-cutlery" style="font-size: 60px;color:#99CC33;"></i>
+                        <h4 class="txt-center">微商户 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年</h4>
+                        <p ></p>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="examples" class="expd bdt">
@@ -201,6 +222,6 @@
 	</div>
 	<!-- Footer End -->
 	<!-- Scroll to top -->
-	<span class="totop"><a href="#.home"> <i class="fa fa-chevron-up"></i> </a></span>
+	<span class="totop"><a href="#home"> <i class="fa fa-chevron-up"></i> </a></span>
 </div>
 <!-- Wrapper End -->
