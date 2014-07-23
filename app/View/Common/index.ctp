@@ -105,7 +105,7 @@
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-cutlery" style="font-size: 60px;color:#99CC33;"></i>
-                        <h4 class="txt-center">微店铺 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年<span style="font-size:14px">（可以创建3个店铺）</span></h4>
+                        <h4 class="txt-center">微店铺 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年<span style="font-size:14px">（可以创建3个分店）</span></h4>
                         <p class="txt-center">
 							<span style="color: red">主要功能：</span><br />
 							自动回复<br />
