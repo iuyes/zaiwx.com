@@ -12,7 +12,7 @@ class WelcomeController extends AppController {
 	
 	public function beforeFilter() {
 	    parent::beforeFilter();
-		$this->Auth->allow('message', 'signup');
+		$this->Auth->allow('message', 'signup', 'stop', 'index');
 		$this->loadModel("TPerson");
 	}
 	
@@ -24,6 +24,16 @@ class WelcomeController extends AppController {
 	 **/
 	function index() {
 		$this->render('/Home/Index/index');
+	}
+	
+	/**
+	 * undocumented function
+	 *
+	 * @return void
+	 * @author niancode
+	 **/
+	function stop() {
+		$this->render('/Home/Index/stop', 'stop');
 	}
 	
 	/**

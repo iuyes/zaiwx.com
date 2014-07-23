@@ -42,11 +42,6 @@ class WxDataKds extends AppModel {
 			'rule' => "notEmpty",
 			'message' => "必须填写",
 			'required' => true
-	    ),
-		'FWbContent' => array(
-			'rule' => "notEmpty",
-			'message' => "必须填写",
-			'required' => true
 	    )
 	);
 	
