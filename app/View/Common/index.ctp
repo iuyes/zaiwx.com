@@ -87,7 +87,7 @@
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-group" style="font-size: 60px;color:#00CC00;"></i>
-                        <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年</h4>
+                        <h4 class="txt-center">微小区平台 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年</h4>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
