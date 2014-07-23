@@ -24,6 +24,6 @@ body{background:#F9FAFD;color:#818181;}
 	<div class="title">亲爱的用户们：</div>
 	<div class="text">
 		为了早日进行内测，我们正在升级为新版在微信。因此目前网站的部分功能不能使用，请稍后再回来。给您造成了不便，请谅解。
-		<span style="color:red">PS.升级后之旧版在微信数据已迁移到<a href="http://www.cakewx.com">www.CakeWX.com新的地址，欢迎大家使用cakewx.com继续运营自己的公众号。</a></span>
+		<span style="color:red">PS.升级后之旧版在微信数据已迁移到<a href="http://mp.cakewx.com">www.CakeWX.com新的地址，欢迎大家使用cakewx.com继续运营自己的公众号。</a></span>
 	</div>
 </div>
