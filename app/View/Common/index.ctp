@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="ann" style="text-align:center;line-height: 40px;color:#f00;background: #FFF;">官方QQ交流群：295169425 <span style="color:#CCC;margin-left:10px;">(推荐使用Chrome，safari，Firefox火狐浏览器浏览器，获得最佳使用体验。)</span></div>
+	<div class="ann" style="text-align:center;line-height: 40px;color:#f00;background: #FFF;">官方QQ交流群：295169425 <span style="color:#888;margin-left:10px;">推荐使用Chrome，safari，Firefox火狐浏览器浏览器，获得最佳使用体验。</span></div>
 	<p style="margin-top:10px; text-align:center;"></p>
 	<!-- Main Content -->
 	<div class="main-content bgwhite">
