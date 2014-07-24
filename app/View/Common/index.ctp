@@ -90,9 +90,6 @@
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-group" style="font-size: 60px;color:#00CC00;"></i>
-<<<<<<< HEAD
-                        <h4 class="txt-center">微小区平台 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年</h4>
-=======
                         <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年<span style="font-size:14px">（可以创建5个小区）</span></h4>
 						<p class="txt-center">
 							<span style="font-size:14px">（公众号数量不限，另赠送10个店铺）</span><br />
@@ -104,7 +101,6 @@
 							微会员<br />
 							微店铺<br />
 						</p>
->>>>>>> 87360dc56c65d2473a1ea659b27eed3fa3d4478d
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
