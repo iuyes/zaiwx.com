@@ -50,6 +50,8 @@ class UserController extends AppController {
 	 * @author apple
 	 **/
 	function register() {
+		$this->flashError("网站暂时不开放注册。");
+		return $this->redirect(array('action' => "login"));
 		$errors = "";
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->TPerson->set($this->request->data);

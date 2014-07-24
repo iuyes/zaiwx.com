@@ -14,7 +14,7 @@
 					<li class="active"><a href="#home">首页</a></li>
 					<li><a href="#service">产品介绍</a></li>
                     <li><a href="#moshi">运营模式</a></li>
-                    <li><a href="#baojia">产品报价</a></li>
+                    <li><a href="#baojia">报价方案</a></li>
 					<li><a href="#examples">客户案例</a></li>
 					<li><a href="#contact">联系我们</a></li>
 					<li><a href="#shiyong">申请试用</a></li>

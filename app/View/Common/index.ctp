@@ -67,7 +67,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div  style="width: 460px;margin:0 auto">
                             <h3>小区交流互动平台</h3>
-                            <p>为小区内居民提供便利的移动端交流平台，打造一个极具用户粘性的本地社区服务，生活平台。</p>
+                            <p>邻里互助帮帮忙，二手闲置物品近距离交易，兴趣小组开心聊。专为小区内居民提供便利的移动端交流平台，打造一个极具用户粘性的本地社区服务，生活平台。</p>
                         </div>
                     </div>
                 </div>
@@ -82,20 +82,43 @@
         <section id="baojia" class="expd bdt">
             <div class="container">
                 <div class="heading text-center">
-                    <h5 style="font-size: 40px;">产品报价</h5>
+                    <h5 style="font-size: 40px;">
+                    	报价方案
+                    </h5>
                     <div class="bor"></div>
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-group" style="font-size: 60px;color:#00CC00;"></i>
+<<<<<<< HEAD
                         <h4 class="txt-center">微小区平台 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年</h4>
+=======
+                        <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年<span style="font-size:14px">（可以创建5个小区）</span></h4>
+						<p class="txt-center">
+							<span style="font-size:14px">（公众号数量不限，另赠送10个店铺）</span><br />
+							<span style="color: red">主要功能：</span><br />
+							自动回复<br />
+							图文回复<br />
+							素材库（不限）<br />
+							自定义菜单<br />
+							微会员<br />
+							微店铺<br />
+						</p>
+>>>>>>> 87360dc56c65d2473a1ea659b27eed3fa3d4478d
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-cutlery" style="font-size: 60px;color:#99CC33;"></i>
-                        <h4 class="txt-center">微商户 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年</h4>
-                        <p ></p>
+                        <h4 class="txt-center">微店铺 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年<span style="font-size:14px">（可以创建3个分店）</span></h4>
+                        <p class="txt-center">
+							<span style="color: red">主要功能：</span><br />
+							自动回复<br />
+							图文回复<br />
+							素材库（不限）<br />
+							自定义菜单<br />
+							微会员<br />
+						</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +135,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
                     <?php echo $this->Html->image('/html/img/wsh.jpg', array('width' => "200", 'alt' => "微小区公众号")); ?>
-                    <h2>第五食堂微商铺</h2>
+                    <h2>第五食堂微店铺</h2>
                 </div>
             </div>
         </section>
@@ -133,7 +156,7 @@
                                 <!-- Icon -->
                                 <i class="fa fa-map-marker"></i>
                                 <h4>地址</h4>
-                                <p>北京市东城区南竹杆胡同2号银河搜候中心5层20616-A0382</p>
+                                <p>北京市东城区南竹杆胡同2号银河SOHO，5层20616-A0382</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-6">
@@ -193,7 +216,7 @@
 								</div>
 								<div class="col-md-12 col-sm-12">
 									<div class="form-group">
-										<textarea class="form-control" name="FMessage" id="message" rows="6" placeholder="留言内容"></textarea>
+										<textarea class="form-control" name="FMessage" id="message" rows="6" placeholder="写写您的需求吧，需要试用什么产品。"></textarea>
 									</div> 
 									<button type="submit" id="submit" name="submit" class="btn btn-theme">发送</button>
 								</div>
