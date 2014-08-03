@@ -90,24 +90,25 @@
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-group" style="font-size: 60px;color:#00CC00;"></i>
-                        <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">20000</span>/年<span style="font-size:14px">（可以创建5个小区）</span></h4>
+                        <h4 class="txt-center">微小区 <span style="font-size: 24px;margin-left: 10px;color:#00CC00">299</span>/年<span style="font-size:14px">（个人版）</span></h4>
 						<p class="txt-center">
-							<span style="font-size:14px">（公众号数量不限，另赠送10个店铺）</span><br />
+							<span style="font-size:14px">（公众号数量限1个）</span><br />
 							<span style="color: red">主要功能：</span><br />
 							自动回复<br />
 							图文回复<br />
 							素材库（不限）<br />
 							自定义菜单<br />
 							微会员<br />
-							微店铺<br />
+							微小区<br />
 						</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 txt-center">
                     <div class="info-item">
                         <i class="fa fa-cutlery" style="font-size: 60px;color:#99CC33;"></i>
-                        <h4 class="txt-center">微店铺 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年<span style="font-size:14px">（可以创建3个分店）</span></h4>
-                        <p class="txt-center">
+                        <h4 class="txt-center">微店铺 <span style="font-size: 24px;margin-left: 10px;color:#99CC33">5000</span>/年<span style="font-size:14px">（商家版）</span></h4>
+						<span style="font-size:14px">（公众号数量限1个，可以创建10个分店）</span><br />
+						<p class="txt-center">
 							<span style="color: red">主要功能：</span><br />
 							自动回复<br />
 							图文回复<br />
